@@ -1,9 +1,9 @@
 {
   "name": "@robinblomberg/ts-watch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Robin Blomberg",
   "type": "module",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "types": "types.d.ts",
   "devDependencies": {
     "@robinblomberg/ansi": "^0.5.1",
