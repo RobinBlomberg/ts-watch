@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
     "checkJs": true,
+    "declaration": true,
     "downlevelIteration": true,
-    "esModuleInterop": true,
     "incremental": true,
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -13,9 +12,5 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext"
-  },
-  "include": [
-    "**/*.js",
-    "types.d.ts"
-  ]
+  }
 }

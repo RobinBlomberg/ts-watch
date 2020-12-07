@@ -1,30 +1,31 @@
 {
   "name": "@robinblomberg/ts-watch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Robin Blomberg",
   "type": "module",
   "main": "lib/index.js",
-  "types": "types.d.ts",
+  "types": "main.d.ts",
   "devDependencies": {
-    "@robinblomberg/ansi": "^0.5.1",
-    "@robinblomberg/eslint-config-robinblomberg": "^0.2.20",
+    "@robinblomberg/ansi": "^0.5.3",
+    "@robinblomberg/eslint-config-robinblomberg": "^0.2.22",
+    "@robinblomberg/test": "^0.5.9",
     "@types/node": "^14.14.10",
     "concurrently": "^5.3.0",
     "eslint": "^7.15.0",
-    "husky": "^4.3.4",
+    "husky": "^4.3.5",
     "lint-staged": "^10.5.3",
     "typescript": "^4.1.2"
   },
   "scripts": {
     "check": "tsc",
-    "dev": "nodemon --watch . --exec \"concurrently \\\"node ./test/index.test.js\\\" tsc \\\"eslint **/*.{js,ts}\\\"\"",
-    "lint": "eslint \"**/*.{js,ts}\"",
-    "lint:fix": "eslint \"**/*.{js,ts}\" --fix",
-    "test": "node ./test/index.test.js"
+    "dev": "nodemon --watch . --exec \"concurrently \\\"npm run --silent test\\\" \\\"npm run --silent check\\\"\"",
+    "lint": "eslint **/*.{js,ts}",
+    "lint:fix": "eslint **/*.{js,ts} --fix",
+    "test": "node --unhandled-rejections=strict ./test/index.test.js"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run check && npm run test && lint-staged"
+      "pre-commit": "npm run test && npm run check && npm run lint:fix"
     }
   },
   "lint-staged": {
